@@ -9,12 +9,13 @@ class CalculatorBrain {
   double _bmi;
 
   String calculateBMI() {
-    _bmi = 703 * (weight / pow(height, 2));
+    _bmi = (weight / (height * height)) * 703;
+    //BMI = ( Weight in Pounds / (Height in inches) x (Height in inches) 	) x 703
     return _bmi.toStringAsFixed(1);
 }
 
   String getResult() {
-    if(_bmi > 25) {
+    if(_bmi >= 25) {
       return 'OVERWEIGHT';
     } else if (_bmi > 18.5) {
       return 'NORMAL';
@@ -24,9 +25,9 @@ class CalculatorBrain {
   }
 
   String getInterpretation() {
-    if(_bmi > 25) {
+    if(_bmi >= 25) {
       return 'You have a higher than normal body weight. Try to exercise more.';
-    } else if (_bmi > 18.5) {
+    } else if (_bmi >= 18.5) {
       return 'You have a normal body weight. Good job!';
     } else {
       return 'You have a lower than normal body weight. You can eat a bit more.';

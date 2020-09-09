@@ -24,8 +24,8 @@ class _InputPageState extends State<InputPage> {
 
   Gender selectedGender;
   int height = 60; //inches
-  int weight = 160;
-  int age = 19;
+  int weight = 120;
+  int age = 25;
 
   @override
   Widget build(BuildContext context) {
@@ -89,7 +89,7 @@ class _InputPageState extends State<InputPage> {
                         style: kTextWeight,
                       ),
                       Text(
-                        'cm',
+                        'in',
                         style: kLabelTextStyle,
                       ),
                     ],
@@ -129,10 +129,21 @@ class _InputPageState extends State<InputPage> {
                     children: <Widget>[
                       Text('WEIGHT', style: kLabelTextStyle,
                       ),
-                      Text(
-                        weight.toString(),
-                        style: kTextWeight,
-                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment: CrossAxisAlignment.baseline,
+                        textBaseline: TextBaseline.alphabetic,
+                        children: <Widget>[
+                          Text(
+                            weight.toString(),
+                            style: kTextWeight,
+                          ),
+                          Text(
+                            'lbs',
+                            style: kLabelTextStyle,
+                            ),
+                          ],
+                        ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: <Widget>[
